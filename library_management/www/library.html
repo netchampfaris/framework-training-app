@@ -1,0 +1,26 @@
+{%- extends "library_management/templates/web2.html" -%}
+
+{%- block header -%}
+<h1>Library</h1>
+{%- endblock -%}
+
+{%- block body -%}
+
+<div class="row">
+{%- for article in articles -%}
+<div class="col">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text">
+                {{ article.name }}
+            </p>
+            <a href="/article/{{ article.name }}">Open Article</a>
+        </div>
+    </div>
+</div>
+{%- endfor -%}
+</div>
+
+{{ web_block('Articles', values={'order_by': 'creation'}) }}
+
+{%- endblock -%}

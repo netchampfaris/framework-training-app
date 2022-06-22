@@ -18,6 +18,8 @@ app_license = "MIT"
 # web_include_css = "/assets/library_management/css/library_management.css"
 # web_include_js = "/assets/library_management/js/library_management.js"
 
+web_include_js = []
+
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "library_management/public/scss/website"
 
@@ -113,23 +115,23 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"library_management.tasks.all"
-# 	],
-# 	"daily": [
-# 		"library_management.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"library_management.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"library_management.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"library_management.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	# "all": [
+	# 	"library_management.tasks.all"
+	# ],
+	# "daily": [
+	# 	"library_management.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"library_management.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"library_management.tasks.weekly"
+	# ],
+	"monthly": [
+		"library_management.tasks.monthly"
+	],
+}
 
 # Testing
 # -------
@@ -193,3 +195,8 @@ app_license = "MIT"
 # Recommended only for DocTypes which have limited documents with untranslated names
 # For example: Role, Gender, etc.
 # translated_search_doctypes = []
+
+
+website_route_rules = [
+	{"from_route": "/article/<article_name>", "to_route": "article"},
+]
